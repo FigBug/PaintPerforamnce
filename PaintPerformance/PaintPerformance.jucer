@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="i7nKCW" name="PaintPerformance" projectType="guiapp" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
+  <MAINGROUP id="b4rQBI" name="PaintPerformance">
+    <GROUP id="{DA483C37-56CA-7C1B-8FE0-C9CE40ABE0BC}" name="Source">
+      <FILE id="SbJW85" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="YKOORI" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      <FILE id="PuSVh7" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="PaintPerformance"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="PaintPerformance"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../modules/juce/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../modules/juce/modules"/>
+        <MODULEPATH id="juce_events" path="../modules/juce/modules"/>
+        <MODULEPATH id="juce_graphics" path="../modules/juce/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../modules/juce/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+</JUCERPROJECT>
