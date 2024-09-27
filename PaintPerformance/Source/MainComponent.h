@@ -2,6 +2,8 @@
 
 #include <JuceHeader.h>
 
+extern double usedTime;
+
 static constexpr int cellColour = 0x10000001;
 
 class Stack : public juce::Component
@@ -26,8 +28,12 @@ class Draw : public juce::Component
 public:
 	void paint(juce::Graphics& g) override
 	{
+		double t1 = juce::Time::getMillisecondCounterHiRes() / 1000;
 		g.setColour (findColour(cellColour, true).brighter (adjust));
+		double t2 = juce::Time::getMillisecondCounterHiRes() / 1000;
 		//g.setColour (juce::Colours::red.brighter (adjust));
+
+		usedTime += t2 - t1;
 
 		g.fillAll();
 	}
@@ -61,6 +67,7 @@ private:
 
 	int count = 0;
 	float fps = 0;
+	float used = 0;
 	juce::Time last { juce::Time::getCurrentTime() };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)

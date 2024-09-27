@@ -2,6 +2,8 @@
 
 constexpr int gridSize = 40;
 
+double usedTime = 0.0;
+
 //==============================================================================
 MainComponent::MainComponent()
 {
@@ -42,11 +44,14 @@ void MainComponent::paintOverChildren (juce::Graphics& g)
 		fps = count / diff.inSeconds();
 		last = now;
 		count = 0;
+
+		used = usedTime / diff.inSeconds();
+		usedTime = 0;
 	}
 
 	g.setColour (juce::Colours::black);
-	g.setFont (juce::Font (juce::FontOptions(25.0f)));
-	g.drawText (juce::String::formatted ("%0.1f fps", fps), getLocalBounds(), juce::Justification::centred);
+	g.setFont (juce::Font (juce::FontOptions (25.0f)));
+	g.drawText (juce::String::formatted ("%0.1f fps %0.1f%%", fps, used * 100), getLocalBounds(), juce::Justification::centred);
 
 	count++;
 }
